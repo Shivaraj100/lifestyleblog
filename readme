@@ -1,0 +1,1 @@
+created a script for nav bar, you can use it as a basic template. you can add css and html in the nav.js file then use <script src="navbar.js"></script> in desired file to achieve your nav bar.!!!!!!!!
