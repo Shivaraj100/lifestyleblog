@@ -1,0 +1,87 @@
+<script src="navbar.js"></script>
+<body>
+      
+    <h1>User Registration</h1>
+		<title>User Registration</title>
+		<style>
+            
+      h1 {
+      text-align: center;
+      color: #9c77b1;
+    }
+    
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    .radio-group {
+      margin-bottom: 20px;
+    }
+    
+    .radio-group span {
+      display: block;
+      margin-bottom: 10px;
+      color: #666;
+    }
+    
+    .radio-group label {
+      display: inline-block;
+      margin-right: 10px;
+      color: #666;
+    }
+    
+    input[type="submit"] {
+      background-color: #9c77b1;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #af54e4;
+    }
+  
+		</style>
+	  </head>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" required>
+      <div class="radio-group">
+        <span>How did you find out about us?</span>
+        <br>
+        <label><input type="radio" name="find-out" value="friend">Friend</label>
+        <label><input type="radio" name="find-out" value="search">Search engine</label>
+        <label><input type="radio" name="find-out" value="social-media">Social media</label>
+        <label><input type="radio" name="find-out" value="other">Other</label>
+      </div>
+      <input type="submit" value="Register">
+    </form>
+  </body>

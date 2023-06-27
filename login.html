@@ -1,0 +1,108 @@
+<script src="navbar.js"></script>
+<body>
+    <style>
+
+  body {
+    background-color: #f1f6ff;
+  }
+
+  #login-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    margin: 10% auto;
+    padding: 30px;
+    width: 400px;
+  }
+
+  h1 {
+    color: #9c77b1;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  label {
+    color: #777;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    border: none;
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  input[type="submit"] {
+    background-color: #9c77b1;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #c6d1d8;
+  }
+
+  .error-message {
+    color: #f00;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  /* New styles for banner and images */
+  .banner {
+    background-color: #9c77b1;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+  }
+    </style>
+   <br>
+   <br>
+   <br>
+    <h1>Login Page</h1>
+  
+    <form id="login-form">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <input type="submit" value="Login">
+      <div class="error-message" id="error-message"></div>
+    </form>
+  
+    <script>
+      const form = document.getElementById('login-form');
+      const errorMessage = document.getElementById('error-message');
+  
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+  
+        const username = form.username.value;
+        const password = form.password.value;
+  
+        if (username === '' || password === '') {
+          errorMessage.textContent = 'Please enter both username and password.';
+        } else if (username !== 'java' || password !== 'script') {
+          errorMessage.textContent = 'Incorrect username or password.';
+        } else {
+          // Redirect to dashboard page
+          window.location.href = 'index.html';
+        }
+      });
+    </script>
+  </body>
