@@ -111,6 +111,3 @@ function register(registerData) {
         body: JSON.stringify(registerData)
     }).then(response=>location="/profile.html")
 }
-
-
-

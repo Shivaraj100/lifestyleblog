@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
       { name: "Home", url: "index.html" },
       { name: "Login", url: "login.html" },
       { name: "Profile", url: "profile.html" },
-      { name: "Recent Posts", url: "recentposts.html" },
       { name: "Registration", url: "registration.html" }
     ];
   
