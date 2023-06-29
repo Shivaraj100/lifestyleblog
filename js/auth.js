@@ -132,8 +132,9 @@ function getPosts(){
         const target = document.getElementById("target");
         target.innerHTML=""
         data.forEach(item=>{
+
             
-            target.innerHTML += item.text +"<br><br>"
+            target.innerHTML +=`<div class="card"> <b> ${item.text} </b> <br> <div>   ${item.username} </div> <br>    ${item.createdAt}    <br>  </div>`; 
         })
     });
 }
