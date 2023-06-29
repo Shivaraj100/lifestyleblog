@@ -90,12 +90,16 @@ function logout () {
             window.location.assign("/");  // redirect back to landing page
         });
 }
-function sendPost(data={text:"string"}){
+function sendPost(postData){
     const loginData = getLoginData();
     fetch("https://microbloglite.onrender.com/api/posts",{
         method:"POST", //CREATE
-        body: JSON.stringify(data),
-        headers:{Authorization: `Bearer ${loginData.token}`}
+        body: JSON.stringify(postData),
+        headers:{
+            Authorization: `Bearer ${loginData.token}`,
+            "Content-Type": "application/json",
+        },
+
     })
     .then(response =>response.json())
     .then(data =>{
