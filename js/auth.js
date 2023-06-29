@@ -90,11 +90,11 @@ function logout () {
             window.location.assign("/");  // redirect back to landing page
         });
 }
-function sendPost(data={text:"string"}){
+function sendPost(postData){
     const loginData = getLoginData();
     fetch("https://microbloglite.onrender.com/api/posts",{
         method:"POST", //CREATE
-        body: JSON.stringify(data),
+        body: JSON.stringify(postData),
         headers:{
             Authorization: `Bearer ${loginData.token}`,
             "Content-Type": "application/json",
@@ -116,7 +116,7 @@ function register(registerData) {
     }).then(response=>location="/profile.html")
 }
 
-async function getPosts(){
+function getPosts(){
     const loginData = getLoginData();
     fetch("https://microbloglite.onrender.com/api/posts",{
         method:"GET", //Read
@@ -130,8 +130,7 @@ async function getPosts(){
         console.log(data); //Render posts
         data.forEach(item=>{
             const target = document.getElementById("target");
-            target += item.text +"<br><br>"
+            target.innerHTML += item.text +"<br><br>"
         })
     });
 }
-getPosts()
