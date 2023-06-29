@@ -103,7 +103,8 @@ function sendPost(postData){
     })
     .then(response =>response.json())
     .then(data =>{
-        console.log(data) //to do cleanup
+        console.log(data) 
+        getPosts()//to do cleanup
     });
 }
 function register(registerData) {
@@ -127,9 +128,11 @@ function getPosts(){
     })
     .then(response =>response.json())
     .then(data =>{
-        console.log(data); //Render posts
+        console.log(data); //Render posts\
+        const target = document.getElementById("target");
+        target.innerHTML=""
         data.forEach(item=>{
-            const target = document.getElementById("target");
+            
             target.innerHTML += item.text +"<br><br>"
         })
     });

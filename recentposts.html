@@ -15,6 +15,9 @@
   </div>
   <div id="target"></div>
   <script>
+    if (!isLoggedIn()){
+      location="login.html"
+    }
     showFormBtn.onclick = e => {
       postForm.style.display = "block";
     }
@@ -25,5 +28,6 @@
       sendPost(data)
     }
     getPosts()
+
   </script>
 </body>

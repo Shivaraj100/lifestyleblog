@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", function() {
     navbar.classList.add("navbar");
   
     const pages = [
-      { name: "Home", url: "index.html" },
-      { name: "Posts", url: "recentposts.html" },
-      { name: "Login", url: "login.html" },
-      { name: "Profile", url: "profile.html" },
-      { name: "Registration", url: "registration.html" }
+      { name: "Home", url: "/index.html" },
+      { name: "Fitness", url: "/fitness.html" },
+      { name: "Food", url: "/food.html" },
+      { name: "Fashion", url: "/fashion.html" },
+      { name: "Travel", url: "/travel.html" }
     ];
   
     for (let i = 0; i < pages.length; i++) {
