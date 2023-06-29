@@ -95,7 +95,11 @@ function sendPost(data={text:"string"}){
     fetch("https://microbloglite.onrender.com/api/posts",{
         method:"POST", //CREATE
         body: JSON.stringify(data),
-        headers:{Authorization: `Bearer ${loginData.token}`}
+        headers:{
+            Authorization: `Bearer ${loginData.token}`,
+            "Content-Type": "application/json",
+        },
+
     })
     .then(response =>response.json())
     .then(data =>{
@@ -112,5 +116,22 @@ function register(registerData) {
     }).then(response=>location="/profile.html")
 }
 
-
+function getPosts(){
+    const loginData = getLoginData();
+    fetch("https://microbloglite.onrender.com/api/posts",{
+        method:"GET", //Read
+        headers:{
+            Authorization: `Bearer ${loginData.token}`,
+            "Content-Type": "application/json",
+        },
+    })
+    .then(response =>response.json())
+    .then(data =>{
+        console.log(data) //Render posts
+        target = document.getElementById("target");
+        data.forEach(item=>{
+            target += item.text +"<br><br>"
+        })
+    });
+}
 

@@ -1,5 +1,6 @@
 <script src="js/navbar.js"></script>
 <script src="js/auth.js"> </script>
+<body>
 <button id="showFormBtn">START A BLOG</button>
     <form id="postForm" style="display: none;">
         <label for="title">Title:</label>
@@ -8,16 +9,20 @@
         <label for="content">Content:</label>
         <textarea id="content" name="content" required></textarea>
       
-        <button id="submit_post" type="submit">Post</button>
+        <input type="button" id= "post"value="Post" onclick = "sendPost()"></button>
+        <!-- <input type="button" value="Register" id="register" onclick="storeData()" -->
       </form>
+      <div id="target"></div>
       <script> 
       showFormBtn.onclick = e=>{
         postForm.style.display="block";
       }
-      submit_post.onclick=e=>{
+      sendPost.onclick=e=>{
         data={
       "text": content.value
 }
        sendPost(data)
       }
+      getPosts()
     </script>
+</body>
