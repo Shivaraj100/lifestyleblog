@@ -82,28 +82,24 @@
     <input type="text" id="username" name="username" required>
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" required>
-    <input type="button" value="Login " id="login" onclick="login()">
+    <input type="button" value="Login " id="login" onclick="handleFormSubmit()">
     <div class="error-message" id="error-message"></div>
    </div>
   
    <script>
     function handleFormSubmit(event) {
-   event.preventDefault(); // Prevent form submission
+
    
    // Get form input values
    const username = document.getElementById("username").value;
-   const fullName = document.getElementById("fullName").value;
    const password = document.getElementById("password").value;
    
-   //   validate email format
-   if (!validateEmail(username)) {
-      alert("Inavild email format");
-      return;
-   }
-   
+   login({
+    username: username,
+    password:password,
+   })
    // Clear form inputs
    document.getElementById("username").value = "";
-   document.getElementById("fullName").value = "";
    document.getElementById("password").value = "";};
    </script>
   </body>

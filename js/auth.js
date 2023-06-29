@@ -111,3 +111,22 @@ function register(registerData) {
         body: JSON.stringify(registerData)
     }).then(response=>location="/profile.html")
 }
+
+function getPosts(){
+    const loginData = getLoginData();
+    fetch("https://microbloglite.onrender.com/api/posts",{
+        method:"GET", //Read
+        headers:{
+            Authorization: `Bearer ${loginData.token}`,
+            "Content-Type": "application/json",
+        },
+    })
+    .then(response =>response.json())
+    .then(data =>{
+        console.log(data); //Render posts
+        data.forEach(item=>{
+            const target = document.getElementById("target");
+            target.innerHTML += item.text +"<br><br>"
+        })
+    });
+}
