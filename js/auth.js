@@ -116,7 +116,7 @@ function register(registerData) {
     }).then(response=>location="/profile.html")
 }
 
-function getPosts(){
+async function getPosts(){
     const loginData = getLoginData();
     fetch("https://microbloglite.onrender.com/api/posts",{
         method:"GET", //Read
@@ -127,11 +127,11 @@ function getPosts(){
     })
     .then(response =>response.json())
     .then(data =>{
-        console.log(data) //Render posts
-        target = document.getElementById("target");
+        console.log(data); //Render posts
         data.forEach(item=>{
+            const target = document.getElementById("target");
             target += item.text +"<br><br>"
         })
     });
 }
-
+getPosts()
