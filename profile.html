@@ -1,2 +1,22 @@
 <script src="js/navbar.js"></script>
 <script src="js/auth.js"> </script>
+<button id="logoutBtn">Logout</button>
+<script>
+    //  logout section
+
+    //Get the logout button element
+const logoutButton = document.getElementById('logoutBtn');
+// Add click event listener to the logout button
+logoutButton.addEventListener('click', logout);
+// Function to handle logout
+function logout() {
+  // Remove the authorization token from localStorage
+  localStorage.removeItem('authorizationToken');
+  // Redirect the user to the login page or perform any other necessary actions
+  window.location.href = 'login.html'; // Replace with your desired logout destination
+}
+</script>
+
+<style>
+    
+</style>
