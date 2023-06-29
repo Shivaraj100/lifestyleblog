@@ -2,7 +2,7 @@
 
 "use strict";
 
-const apiBaseURL = "https://microbloglite.herokuapp.com";
+const apiBaseURL = "https://microbloglite.onrender.com";
 // Backup server:   https://microbloglite.onrender.com
 
 // You can use this function to get the login data of the logged-in
@@ -43,12 +43,21 @@ function login (loginData) {
         .then(response => response.json())
         .then(loginData => {
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
-            window.location.assign("/posts");  // redirect
+            window.location.assign("/recentposts.html");  // redirect
 
             return loginData;
         });
 }
 
+function register(registerData) {
+    return fetch(apiBaseURL + "/api/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(registerData)
+    }).then(response=>location="/login.html")
+} 
 
 // This is the `logout()` function you will use for any logout button
 // which you may include in various pages in your app. Again, READ this
@@ -81,3 +90,27 @@ function logout () {
             window.location.assign("/");  // redirect back to landing page
         });
 }
+function sendPost(data={text:"string"}){
+    const loginData = getLoginData();
+    fetch("https://microbloglite.onrender.com/api/posts",{
+        method:"POST", //CREATE
+        body: JSON.stringify(data),
+        headers:{Authorization: `Bearer ${loginData.token}`}
+    })
+    .then(response =>response.json())
+    .then(data =>{
+        console.log(data) //to do cleanup
+    });
+}
+function register(registerData) {
+    return fetch(apiBaseURL + "/api/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(registerData)
+    }).then(response=>location="/profile.html")
+}
+
+
+

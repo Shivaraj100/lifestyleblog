@@ -1,4 +1,5 @@
-<script src="navbar.js"></script>
+<script src="js/navbar.js"></script>
+<script src="js/auth.js"> </script>
 <body>
     <style>
 
@@ -74,35 +75,38 @@
    <br>
    <br>
    <br>
-    <h1>Login Page</h1>
+   <h1>Login Page</h1>
   
-    <form id="login-form">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-      <input type="submit" value="Login">
-      <div class="error-message" id="error-message"></div>
-    </form>
+   <div id="login-form">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <input type="button" value="Login " id="login" onclick="login()">
+    <div class="error-message" id="error-message"></div>
+   </div>
   
-    <script>
-      const form = document.getElementById('login-form');
-      const errorMessage = document.getElementById('error-message');
-  
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-  
-        const username = form.username.value;
-        const password = form.password.value;
-  
-        if (username === '' || password === '') {
-          errorMessage.textContent = 'Please enter both username and password.';
-        } else if (username !== 'java' || password !== 'script') {
-          errorMessage.textContent = 'Incorrect username or password.';
-        } else {
-          // Redirect to dashboard page
-          window.location.href = 'index.html';
-        }
-      });
-    </script>
+   <script>
+    function handleFormSubmit(event) {
+   event.preventDefault(); // Prevent form submission
+   
+   // Get form input values
+   const username = document.getElementById("username").value;
+   const fullName = document.getElementById("fullName").value;
+   const password = document.getElementById("password").value;
+   
+   //   validate email format
+   if (!validateEmail(username)) {
+      alert("Inavild email format");
+      return;
+   }
+   
+   // Clear form inputs
+   document.getElementById("username").value = "";
+   document.getElementById("fullName").value = "";
+   document.getElementById("password").value = "";};
+   </script>
   </body>
+
+  
+
