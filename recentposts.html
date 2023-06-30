@@ -16,10 +16,31 @@
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .4);
 }
 
-   
+/* CSS */
+.button {
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
 </style>
 <body>
-  <button id="showFormBtn">START A BLOG</button>
+  <button class="button"id="showFormBtn">START A BLOG</button>
   <div id="postForm" style="display: none;">
     <label for="title">Title:</label>
     <input type="text" id="title" name="title" required>
